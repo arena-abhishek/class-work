@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Darkmode</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+            rel='stylesheet'>
+        <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+
+}
+body{
+    height: 100vh;
+    background-color: white;
+   /*  cursor:url(target-icon-4529.png) auto; */
+}
+header{
+    height: vh;
+display: flex;
+justify-content: space-around;
+align-items: center;
+/* flex-direction: row; */
+color: #551a8b;
+box-shadow: 0 0 10px grey;
+font-size: 30px;
+position: relative;
+
+}
+header ul{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+li{
+    list-style: none;
+    color: #551a8b;
+    padding: 15px;
+}
+#btn{
+border: none;
+box-shadow: 0 2px grey;
+}
+section{
+ /* margin: 20px 0px; */
+display: flex;
+height: 90vh;
+}
+section .text{
+width: 50%;
+padding: 13vw 7vw;
+gap: 1.9vw;
+display: flex;
+flex-direction: column;
+}
+section .text .first{
+    font-size: 1.7vw;
+    display: flex;
+    flex-direction: column;
+    gap: .7vw;
+}
+section .text .second{
+    font-size: 1.3vw;
+}
+section .theme{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+
+#img{
+    height: 30vw;
+    width: 30vw;
+    border-radius: 50%;
+}
+
+    </style>
+    </head>
+    <body>
+        <header>
+            <h2 id="title">coderHub</h4>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>blogs</li>
+                    <button id="btn"><i class='bx bx-moon'
+                            style='color:#949090; font-size: 50px; background-color: #fff;'
+                            ></i>
+                            <i class='bx bx-sun' style='color:#949090; display: none; font-size: 50px; background-color: black;' ></i></button>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div class="text">
+                <div class="first">
+                    <h1>Hi! I'm Abhishek</h1>
+                </div>
+                <div class="second">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Inventore aliquid omnis tempore officia, dolore
+                        minima sint totam, a qui excepturi enim quod ex nulla
+                        obcaecati, libero maxime facilis.</h4>
+                </div>
+
+            </div>
+            <div class="theme">
+                <div class="dark"><h2 style="font-size:2vw ;" >Normal theme</h2></div>
+                <div><img id="img"
+                        src="https://images.pexels.com/photos/301599/pexels-photo-301599.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="img"></div>
+
+            </section>
+            <script>
+                let title = document.getElementById("title")
+                let btn = document.getElementById("btn");
+                let moon = document.getElementById("btn").firstElementChild;
+                let sun = document.getElementById("btn").lastElementChild;
+                let body = document.querySelector("body");
+                let first = document.getElementsByClassName("first")[0];
+                let second = document.getElementsByClassName("second")[0];
+                let dark = document.getElementsByClassName("dark")[0];
+                let  img = document.getElementById("img");
+
+                btn.addEventListener("click",()=>{
+                    if(body.style.background !="black"){
+                        body.style.background="black"
+                        title.style.color="orange"
+                        first.style.color="#cccccc"
+                        second.style.color="#cccccc"
+                        dark.style.color="#cccccc"
+                        dark.style.fontsize="2vw"
+                        dark.innerHTML="Dark theme"
+                        img.src="https://images.pexels.com/photos/47367/full-moon-moon-bright-sky-47367.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        moon.style.display="none"
+                        sun.style.display="block"
+                        
+                    }
+                    else{
+                        body.style.background="white"
+                        first.style.color="black"
+                        second.style.color="black"
+                        dark.style.color="black"
+                        dark.style.fontSize="2vw"
+                        dark.innerHTML="Normal theme"
+                        img.src="https://images.pexels.com/photos/301599/pexels-photo-301599.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        moon.style.display="block"
+                        sun.style.display="none"
+                    }
+
+                })
+
+
+
+            </script>
+
+        </body>
+    </html>

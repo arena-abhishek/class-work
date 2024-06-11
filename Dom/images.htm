@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction:column;
+            gap: 16px;
+            margin-top: 15vw;
+        }
+        .btn{
+            width: 300px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        #pre{
+            padding: 5px 7px;
+        }
+        #nxt{
+            padding: 5px 7px;
+        }
+        #img{
+            width: 400px;
+            /* height: 300px; */
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Click the buttons </h1>
+            <img id="img"  src="https://picsum.photos/id/140/300/300"
+                alt="images">
+            <!-- <img id="img" src="images/1.jpg" alt="images"> -->
+            <div class="btn">
+                <button onclick="one()" id="pre">Previous</button>
+                <button onclick="two()" id="nxt">Next</button>
+            </div>
+        </div>
+        <script>
+        let img = document.getElementById("img");
+        let num = 0; 
+        function one(){
+            img.setAttribute("src", `images/${--num}.jpg` );
+            // img.setAttribute("width", `400` );
+        }
+        function two(){
+            img.setAttribute("src", `images/${++num}.jpg` );
+            // img.setAttribute("width", `400` );
+        }
+    </script>
+    </body>
+</html>
