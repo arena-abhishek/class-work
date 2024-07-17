@@ -66,7 +66,7 @@ button1.setAttribute("onclick", "next()");
 let button2 = document.createElement("button");
 button2.innerText = "Submit";
 button2.setAttribute("type", "button");
-button2.setAttribute("onclick", "submit()");
+// button2.setAttribute("onclick", "submit()");
 
 let q1o1 = myFormElement5(
   "radio",
@@ -237,16 +237,20 @@ function next() {
     btnOne.style.display = "none";
     btnTwo.style.display = "block";
     num.innerHTML = "<span>4.</span>";
+  }else{
+    
   }
+  
 }
 
 let score = 0;
 function submit() {
   if(document.getElementById("q1o1").checked){score++}
-    if(document.getElementById("q2o1").checked){score++}
-    if(document.getElementById("q3o1").checked){score++}
-    if(document.getElementById("q4o1").checked){score++}
-  alert(`your score is ${+score} /4 `);
+  if(document.getElementById("q2o1").checked){score++}
+  if(document.getElementById("q3o1").checked){score++}
+  if(document.getElementById("q4o1").checked){score++}
+  // alert(`your score is ${score} /4 `);
+  // form.textContent = `Quiz finished! Your score is ${score} out of ${ques.length}.`;
 
   // document.write("your score is"+score)
 }
